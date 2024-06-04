@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="H:\Docs\skewl\CS344 Operating Systems\base64enc\src\base64enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="H:\Docs\skewl\CS344 Operating Systems\base64enc\src\common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="H:\Docs\skewl\CS344 Operating Systems\base64enc\src\encode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="H:\Docs\skewl\CS344 Operating Systems\base64enc\src\decode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="H:\Docs\skewl\CS344 Operating Systems\base64enc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{70AE087F-1BE0-33B9-9397-FA807BC2879F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

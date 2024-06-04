@@ -1,9 +1,9 @@
+/**Contains common code that is used by both encode and decode*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-#include <err.h>
-#include <errno.h>
 
 const char const alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                               "abcdefghijklmnopqrstuvwxyz"
@@ -14,7 +14,8 @@ size_t readNextBytes(FILE *inputStream, uint8_t in[], size_t bytesToRead)
     size_t count = fread(in, sizeof *in, bytesToRead, inputStream);
     if (ferror(inputStream))
     {
-        err(errno, "Could not read file. fread error.\n");
+        printf(stderr, "Could not read file. fread error.\n");
+        exit(1);
     }
 
     return count;

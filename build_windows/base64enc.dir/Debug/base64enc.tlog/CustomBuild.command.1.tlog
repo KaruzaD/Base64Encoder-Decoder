@@ -1,0 +1,10 @@
+^H:\DOCS\SKEWL\CS344 OPERATING SYSTEMS\BASE64ENC\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SH:/Docs/skewl/CS344 Operating Systems/base64enc" "-BH:/Docs/skewl/CS344 Operating Systems/base64enc/build_windows" --check-stamp-file "H:/Docs/skewl/CS344 Operating Systems/base64enc/build_windows/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

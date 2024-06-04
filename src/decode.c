@@ -1,6 +1,4 @@
 #include <string.h>
-#include <err.h>
-#include <errno.h>
 #include "common.h"
 
 void decodeBytes(uint8_t in[], uint8_t out[])
@@ -48,7 +46,8 @@ void decodeAscii(uint8_t in[], const int charsToRead)
         int index = findIndex(alphabet, in[i]);
         if (index == -1)
         {
-            err(errno, "decode() error: Invalid char input %c", in[i]);
+            printf(stderr, "decode() error: Invalid char input %c", in[i]);
+            exit(1);
         }
         in[i] = index;
     }
@@ -57,7 +56,7 @@ void decodeAscii(uint8_t in[], const int charsToRead)
 void decode(char **text, FILE *inputStream)
 {
     const int charsToRead = 4;
-    uint8_t in[charsToRead];
+    uint8_t in[4];
     uint8_t out[3]; // base64 decodes 4 chars to 3
     int endOfFile = 0;
 
@@ -78,6 +77,4 @@ void decode(char **text, FILE *inputStream)
             appendChar(text, (char)out[i]);
         }
     }
-
-    appendChar(text, '\n');
 }

@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <err.h>
-#include <errno.h>
 #include <string.h>
 
 #include <stdint.h> // *should* typedef uint8_t
@@ -19,7 +17,8 @@ FILE *getInputStream(int numArgs, char *inputArgs[])
 
   if (numArgs > 2)
   {
-    err(errno, "Invalid number of arguments\n");
+    printf(stderr, "Invalid number of arguments\n");
+    exit(1);
   }
 
   // max one argument given. Check if it is default or a file path
@@ -34,7 +33,8 @@ FILE *getInputStream(int numArgs, char *inputArgs[])
   inputStream = fopen(inputText, "r");
   if (inputStream == NULL)
   {
-    err(errno, "Unable to open file%s\n", inputText);
+    printf(stderr, "Unable to open file%s\n", inputText);
+    exit(1);
   }
 
   // file stream successfully opened
@@ -56,14 +56,15 @@ int main(int argc, char *argv[])
     encode(&outputText, inputStream);
   }
 
-  printf("%s", outputText);
+  printf("\n%s\n", outputText);
 
   // we're done; close the stream
   if (fclose(inputStream) != 0)
   {
-    err(errno, "Could not close stream\n");
+    printf(stderr, "Could not close input stream\n");
+    return EXIT_FAILURE;
   }
 
   free(outputText);
-  return 0;
+  return EXIT_SUCCESS;
 }

@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "stdint.h": "c",
-        "errno.h": "c",
-        "encode.h": "c",
-        "err.h": "c"
-    }
-}

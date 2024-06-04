@@ -2,20 +2,20 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: gcc build active file",
-            "command": "/usr/bin/gcc",
+            "label": "C/C++: cl.exe build active file",
+            "command": "cl.exe",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "*.C"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [
-                "$gcc"
+                "$msCompile"
             ],
             "group": {
                 "kind": "build",

@@ -1,0 +1,3 @@
+H:/Docs/skewl/CS344 Operating Systems/base64enc/build_windows/CMakeFiles/base64enc.dir
+H:/Docs/skewl/CS344 Operating Systems/base64enc/build_windows/CMakeFiles/ALL_BUILD.dir
+H:/Docs/skewl/CS344 Operating Systems/base64enc/build_windows/CMakeFiles/ZERO_CHECK.dir
